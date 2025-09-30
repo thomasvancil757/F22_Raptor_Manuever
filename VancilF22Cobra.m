@@ -1,6 +1,3 @@
-%% MAE 604 Analytical Dynamics Exam #1, F22 Cobra Manuever Generalization, Thomas Vancil
-
-%% Question #1
 
 clear; clc;
 syms t real
@@ -31,8 +28,6 @@ x_pw = piecewise(t<t0,NaNsym,(t>=t0)&(t<=t1),x_s1,(t>t1)&(t<=t2),x_s2,(t>t2)&(t<
 y_pw = piecewise(t<t0,NaNsym,(t>=t0)&(t<=t1),y_s1,(t>t1)&(t<=t2),y_s2,(t>t2)&(t<=t3),y_s3,(t>t3)&(t<=t4),y_s4,NaNsym);
 z_pw = piecewise(t<t0,NaNsym,(t>=t0)&(t<=t1),z_s1,(t>t1)&(t<=t2),z_s2,(t>t2)&(t<=t3),z_s3,(t>t3)&(t<=t4),z_s4,NaNsym);
 r_pw = [x_pw; y_pw; z_pw];
-
-%% Question #2
 
 times = [0 10 15 20 30];              
 v0 = 10;                              
@@ -118,4 +113,5 @@ axis([-50 250 -150 150 -50 250]);
 view(-115, 25);                   
 axis vis3d; 
 xlabel('X'); ylabel('Y'); zlabel('Z');
+
 title('Trajectory from V0=10, chi(t), gamma(t)');
